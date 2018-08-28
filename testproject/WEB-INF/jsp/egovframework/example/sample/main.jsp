@@ -30,8 +30,8 @@
 </head>
 
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
-123412341234
-	<table>
+12341234123412351235
+	<table>5
 		<tr>
 			<th onclick="location.href='/main.do'" style="cursor:pointer;">메인</th>
 			<th onclick="location.href='/join.do'" style="cursor:pointer;">회원가입</th>
