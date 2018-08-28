@@ -30,8 +30,7 @@
 </head>
 
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
-testQWDQWDWGEW
-WEGWGGEWasdfgasetgqwet1412351235
+X1F3G
 	<table>
 		<tr>
 			<th onclick="location.href='/main.do'" style="cursor:pointer;">메인</th>
