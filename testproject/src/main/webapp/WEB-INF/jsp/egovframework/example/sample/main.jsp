@@ -30,7 +30,7 @@
 </head>
 
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
-${sample.id}
+${sample.id}12341234
 	<table>
 		<tr>
 			<th onclick="location.href='/main.do'" style="cursor:pointer;">메인</th>
