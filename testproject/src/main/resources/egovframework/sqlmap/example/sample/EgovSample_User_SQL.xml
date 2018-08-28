@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace = "User">
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
+	
+	<resultMap id="user" class="egovframework.example.sample.service.DUserVO">
+		<result property="user_id" column="user_id"/>
+		<result property="user_pw" column="user_pw"/>
+		<result property="user_name" column="user_name"/>
+		<result property="user_birth" column="user_birth"/>
+		<result property="user_phone" column="user_phone"/>
+		<result property="user_address" column="user_address"/>
+		<result property="user_d_address" column="user_d_address"/>
+		<result property="user_zipcode" column="user_zipcode"/>
+		<result property="user_email" column="user_email"/>
+	</resultMap>
+	
+	<select id="userDAO.selectUser" resultMap = "user">
+      		<![CDATA[
+            SELECT
+                *
+            FROM D_USER
+            WHERE user_id = #user_id#
+     		]]>
+    </select>
+</sqlMap>

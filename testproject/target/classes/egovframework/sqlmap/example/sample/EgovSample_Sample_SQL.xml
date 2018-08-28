@@ -48,7 +48,7 @@
 		]]>
 	</delete>
     
-    <select id="sampleDAO.selectSample" resultMap="sample">
+    <select id="sampleDAO.selectSamplex" resultMap="sample">
         <![CDATA[
             SELECT
                 ID, NAME, DESCRIPTION, USE_YN, REG_USER
@@ -56,6 +56,9 @@
             WHERE ID=#id#
         ]]>
     </select>
+	
+
+	
 	
 	<select id="sampleDAO.selectSampleList" parameterClass="searchVO" resultClass="egovMap">
 

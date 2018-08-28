@@ -17,7 +17,9 @@ package egovframework.example.sample.web;
 
 import java.util.List;
 
+import egovframework.example.sample.service.DUserVO;
 import egovframework.example.sample.service.EgovSampleService;
+import egovframework.example.sample.service.EgovUserService;
 import egovframework.example.sample.service.SampleDefaultVO;
 import egovframework.example.sample.service.SampleVO;
 
@@ -26,6 +28,7 @@ import egovframework.rte.ptl.mvc.tags.ui.pagination.PaginationInfo;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -61,6 +64,10 @@ public class EgovSampleController {
 	@Resource(name = "sampleService")
 	private EgovSampleService sampleService;
 
+	/** EgovUserService */
+	@Resource(name = "userService")
+	private EgovUserService userService;
+	
 	/** EgovPropertyService */
 	@Resource(name = "propertiesService")
 	protected EgovPropertyService propertiesService;
@@ -79,13 +86,20 @@ public class EgovSampleController {
 	@RequestMapping(value = "/main.do")
 	public String Main(@ModelAttribute("searchVO") SampleDefaultVO searchVO, ModelMap model) throws Exception {
 		
+		DUserVO duserVO = new DUserVO();
+		duserVO.setUser_id("pluss");
+		duserVO = userService.selectUser(duserVO);
+		model.addAttribute("user", duserVO);
+		System.out.println(duserVO);
+		
+		/*
 		SampleVO sampleVO = new SampleVO();
 	    sampleVO.setId("SAMPLE-00002");
 	    sampleVO = sampleService.selectSample(sampleVO);
 	    model.addAttribute("sample",sampleVO);
 	    
 	    System.out.println(sampleVO);
-		
+		*/
 		return "sample/main";
 	}
 	
